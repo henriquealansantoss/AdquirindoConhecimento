@@ -1,27 +1,18 @@
 import express, { Request, Response } from 'express';
 
+//importando as rotas que estão no routes
+import mainroutes from './routes/index';
+
+//importando lista de rotas do painel
+import painelroutes from './routes/painel';
+
 const server = express();
 
-server.get('/', (req: Request, res: Response) => {
-    res.send('Olá Mundo!')
-})
+// usando as rotas que estão no routes
+server.use(mainroutes);
+// server.use('/',mainroutes);
 
-
-// dinamica
-server.get('/noticia/:slug', (req: Request, res: Response) => {
-    let slug: string = req.params.slug;
-    res.send(`Noticia ${slug}`)
-})
-
-server.get('/voo/:origem-:destino', (req: Request, res: Response) => {
-    // let origem = req.params.origem;
-    // let destino = req.params.destino;
-
-    let { origem, destino } = req.params;
-
-    res.send(`${origem} até ${destino}`);
-})
-
-
+// usando as rotas que estão no painel
+server.use('/painel', painelroutes);
 
 server.listen(80);
