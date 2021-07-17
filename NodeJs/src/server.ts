@@ -1,15 +1,24 @@
 import express, { Request, Response } from 'express';
 
-//importando as rotas que estão no routes
-import mainroutes from './routes/index';
-
 //biblioteca que vem junto com o express
 import path from 'path';
+
+//importando o mustache
+import mustache from 'mustache-express';
+
+//importando as rotas que estão no routes
+import mainroutes from './routes/index';
 
 //importando lista de rotas do painel
 import painelroutes from './routes/painel';
 
 const server = express();
+
+//configurando o mustache
+server.set('view engine', 'mustache');
+server.set('views', path.join(__dirname, 'views'));
+//usando
+server.engine('mustache', mustache());
 
 //definindo o caminho até a pasta public 
 server.use(express.static(path.join(__dirname, '../public')));
