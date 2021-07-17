@@ -13,9 +13,4 @@ router.get('/noticias', (req: Request, res: Response)=>{
 
 
 
-
-
-
-
-
 export default router;
