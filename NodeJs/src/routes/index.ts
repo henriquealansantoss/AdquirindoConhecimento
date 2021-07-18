@@ -8,7 +8,27 @@ router.get('/', (req: Request, res: Response) => {
     // envia para o template engine 
 
     // res.send('Olá Mundo!')
-    res.render('home');
+
+    let idade: number = 29;
+    let showAge: boolean = false;
+    (idade < 18) ? showAge = true : showAge = false
+
+
+    let teste = {
+        profissao: "ProgramadorJr",
+        exp: '1 ano'
+    }
+
+    let name: string = "Henrique"
+    res.render('home', {
+        user: name,
+        teste,
+        showAge,
+        idade
+    });
+
+
+
 });
 
 router.get('/contato', (req: Request, res: Response) => {

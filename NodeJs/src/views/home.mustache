@@ -7,9 +7,13 @@
     <h1>Titulo da página</h1>
     <hr/>
 
-    <p>Opa, tudo bem?</p>
+    <p>Opa, tudo bem {{ user }}?</p>
     <p>Qual sua idade?</p>
-
+    <p>Profissão {{teste.profissao}}</p>
+    
+    {{#showAge}}
+        <p>Idade: {{idade}}</p>
+    {{/showAge}}
 </body>
 
 
