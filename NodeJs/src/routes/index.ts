@@ -24,7 +24,8 @@ router.get('/', (req: Request, res: Response) => {
         user: name,
         teste,
         showAge,
-        idade
+        idade,
+        showWelcome: true
     });
 
 
