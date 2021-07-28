@@ -18,7 +18,39 @@
     {{#showWelcome}}
         <p> Bem vindo, {{user}}!</p>
     {{/showWelcome}}
+   <!--Else-->
+    {{^showWelcome}}
+        <p> Beleza, {{user}}!</p>
+    {{/showWelcome}}
 
+
+<hr/>
+
+<h2>Produtos</h2>
+
+<ul>
+    {{#products}}
+        <li>{{title}} - R$ {{price}}</li>
+    {{/products}}
+</ul>
+
+<hr/>
+
+<h2>Teste</h2>
+
+<ul>
+    {{#lista}}
+        <li>{{.}}</li>
+    {{/lista}}
+
+<hr/>
+
+<h2>Teste</h2>
+ <!-- else - se não existir valor dentro da lista irá exibir isso-->
+    {{^lista2}}
+        Não existe teste.
+    {{/lista2}}
+</ul>
 
 
 </body>

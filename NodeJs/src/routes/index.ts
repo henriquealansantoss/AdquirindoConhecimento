@@ -25,10 +25,23 @@ router.get('/', (req: Request, res: Response) => {
         teste,
         showAge,
         idade,
-        showWelcome: true
+        showWelcome: true,
+        products: [
+            { title: 'Produto X', price: 10 },
+            { title: 'Produto Y', price: 15 },
+            { title: 'Produto W', price: 20 }
+        ],
+        lista: [
+            'teste1',
+            'teste2',
+            'teste3'
+        ],
+        lista2: [
+            // 'teste1',
+            // 'teste2',
+            // 'teste3'
+        ]
     });
-
-
 
 });
 
