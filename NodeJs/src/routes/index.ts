@@ -20,7 +20,7 @@ router.get('/', (req: Request, res: Response) => {
     }
 
     let name: string = "Henrique"
-    res.render('home', {
+    res.render('pages/home', {
         user: name,
         teste,
         showAge,
@@ -46,11 +46,15 @@ router.get('/', (req: Request, res: Response) => {
 });
 
 router.get('/contato', (req: Request, res: Response) => {
-    res.send('Formulário de contato')
+    res.render('pages/contato', {
+
+    })
 });
 
 router.get('/sobre', (req: Request, res: Response) => {
-    res.send('Informações sobre a empresa')
+    res.render('pages/sobre', {
+
+    })
 });
 
 
