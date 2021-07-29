@@ -2,17 +2,24 @@
 
 <form method="GET">
     <label>Informe seu nome:</label>
-    <input type="text" name="nome">
-    <input type="submit" value="Enviar"> 
+    <input type="text" name="nome"><br/>
+    <label>Informe seu ano de nascimento:</label>
+    <input type="number" name="ano" required>
+
+    <input type="submit" value="Enviar">
+    
+  
 
     {{#nome}}
         <hr/>
-        <p>Olá {{nome}}, você conseguiu!</p>
+        <p>Olá {{nome}}, você tem {{idade}} </p>
     {{/nome}}
     {{^nome}}
         <hr/>
         <p>{{nomeNull}}</p>
     {{/nome}}
+
+
 
 </form>
 
