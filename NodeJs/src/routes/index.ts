@@ -57,6 +57,24 @@ router.get('/sobre', (req: Request, res: Response) => {
     })
 });
 
+router.get('/envioget', (req: Request, res: Response) => {
+
+    let nome: string = req.query.nome as string;
+    let nomeNull = '';
+
+    if(nome === ''){
+        nomeNull = `Por gentileza informe seu nome para prosseguir!`
+    }else{
+        let arrayNome = nome.split('');
+        nome = arrayNome[0].toUpperCase()+nome.substr(1,nome.length);
+    }
+
+    res.render('pages/envioget',{
+        nome,
+        nomeNull
+    });
+})
+
 
 // Após configurar o router todo, tenho que exporta-lo
 export default router;

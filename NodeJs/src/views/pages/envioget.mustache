@@ -1,0 +1,20 @@
+{{>partials/header}}
+
+<form method="GET">
+    <label>Informe seu nome:</label>
+    <input type="text" name="nome">
+    <input type="submit" value="Enviar"> 
+
+    {{#nome}}
+        <hr/>
+        <p>Olá {{nome}}, você conseguiu!</p>
+    {{/nome}}
+    {{^nome}}
+        <hr/>
+        <p>{{nomeNull}}</p>
+    {{/nome}}
+
+</form>
+
+
+{{>partials/footer}}
