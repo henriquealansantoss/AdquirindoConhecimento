@@ -23,6 +23,8 @@ server.engine('mustache', mustache());
 //definindo o caminho até a pasta public 
 server.use(express.static(path.join(__dirname, '../public')));
 
+//(VIA POST) habilitando para que os dados que estão no body sejam acessiveis dentro da minha rota
+server.use(express.urlencoded({ extended: true }));
 
 // usando as rotas que estão no routes
 server.use(mainroutes);
