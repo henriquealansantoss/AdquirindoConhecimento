@@ -1,4 +1,4 @@
-import { Router, Request, Response } from 'express';
+import { Router} from 'express';
 
 //import { home } from '../controllers/homeController';
 import * as homeController from '../controllers/homeController';

@@ -23,7 +23,7 @@
 
 <ul>
     {{#products}}
-        {{>partials/productItem}}
+        
     {{/products}}
 </ul>
 
@@ -44,6 +44,25 @@
         Não existe teste.
     {{/lista2}}
 </ul>
+
+<hr/>
+
+<h2>Teste</h2>
+
+<ul>
+    {{#expensiveList}}
+        {{>partials/productItem}}
+    {{/expensiveList}}
+
+<hr/>
+
+<h2>Teste</h2>
+ <!-- else - se não existir valor dentro da lista irá exibir isso-->
+    {{^lista2}}
+        Não existe.
+    {{/lista2}}
+</ul>
+
 
 
 {{>partials/footer}}
