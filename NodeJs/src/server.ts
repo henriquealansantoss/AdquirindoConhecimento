@@ -6,11 +6,16 @@ import path from 'path';
 //importando o mustache
 import mustache from 'mustache-express';
 
+//importando o dotenv
+import dotenv from 'dotenv';
+
 //importando as rotas que estão no routes
 import mainroutes from './routes/index';
 
 //importando lista de rotas do painel
 import painelroutes from './routes/painel';
+
+dotenv.config(); //acesso as variaveis de ambiente
 
 const server = express();
 
@@ -39,6 +44,6 @@ server.use((req: Request, res: Response) => {
     res.status(404).send('Página não encontrada!')
 })
 
-server.listen(80);
+server.listen(process.env.PORT);
 
 
